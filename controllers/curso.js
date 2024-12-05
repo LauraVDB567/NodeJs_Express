@@ -49,10 +49,10 @@ ruta.delete('/:id', (req, res) => {
 
 async function crearCurso(body) {
     let curso = new Curso({
-        titulo: body.titulo,
+        title: body.title,
         descripcion: body.descripcion,
         alumnos: body.alumnos,
-        calificacion: body.calificacion,
+        notas: body.notas,
     });
     return await curso.save();
 }
@@ -60,7 +60,7 @@ async function crearCurso(body) {
 async function actualizarUsuario(id, body) {
     let curso = await Curso.findByIdAndUpdate(id, {
         $set: {
-            titulo: body.titulo,
+            title: body.titulo,
             descripcion: body.descripcion,
         },
     }, { new: true });
